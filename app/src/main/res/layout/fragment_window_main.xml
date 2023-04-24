@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/first_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_100">
+
+    <ExpandableListView
+        android:id="@+id/expendableList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="90dp"
+        android:background="@color/white"
+        android:divider="@android:color/background_light"
+        android:dividerHeight="0.5dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="16dp"
+        android:paddingRight="@dimen/margin_normal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <EditText
+            android:id="@+id/numFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/_00"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingLeft="@dimen/margin_normal"
+            android:textSize="@dimen/t_head_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="000" />
+
+        <TextView
+            android:id="@+id/numSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/margin_micro"
+            android:paddingRight="@dimen/margin_micro"
+            android:text="@string/del"
+            android:textSize="@dimen/t_head_size"
+            app:layout_constraintBottom_toBottomOf="@id/numFirst"
+            app:layout_constraintStart_toEndOf="@+id/numFirst"
+            app:layout_constraintTop_toTopOf="@id/numFirst" />
+
+        <EditText
+            android:id="@+id/numSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/_000"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingRight="@dimen/margin_normal"
+            android:textSize="@dimen/t_head_size"
+            app:layout_constraintBottom_toBottomOf="@id/numFirst"
+            app:layout_constraintStart_toEndOf="@id/numSub"
+            app:layout_constraintTop_toTopOf="@id/numFirst"
+            tools:text="000" />
+
+        <ImageView
+            android:id="@+id/ok"
+            android:layout_width="@dimen/t_head_size"
+            android:layout_height="@dimen/t_head_size"
+            android:src="@drawable/ic_baseline_done_24"
+            app:layout_constraintBottom_toBottomOf="@id/numFirst"
+            app:layout_constraintStart_toEndOf="@id/numSecond"
+            app:layout_constraintTop_toTopOf="@id/numFirst" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/plus_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:elevation="5dp"
+        android:src="@drawable/ic_baseline_add"
+        app:borderWidth="@dimen/float_button_border" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
